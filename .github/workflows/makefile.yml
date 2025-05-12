@@ -2,7 +2,12 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+
+    tags:
+      - v1.*
+
   pull_request:
     branches: [ "main" ]
 
@@ -14,8 +19,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: build application
-      run: make eu
+    - name: Build application
+      run: make
 
-   - name: Install application
-     run: make install
+    - name: Install application
+      run: make install

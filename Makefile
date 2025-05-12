@@ -39,7 +39,7 @@ EFILES  = $(DFILES) eu
 HFILES  = eu.h query.h unique.h common.h whenmake.h
 MFILES  = eu.1 
 RFILES  = .gitignore AUTHORS CHANGES COPYING INSTALL README TODO Makefile eu.lsm.in
-SUBDIR  = doc
+SUBDIR  = .github doc
 TARGET  = $(EFILES)
 
 
