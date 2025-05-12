@@ -1,0 +1,69 @@
+The WHOIS service (available via whois.dns.be or in an HTML-ised version via www.dns.be) allows anybody to query a .be domain and retrieve detailed information. As a side effect, WHOIS can be used to check if a domainname is still available for registration.
+
+In the last weeks DNS received several complaints of licensees being spammed by agents (presumably to promote their services). As an immediate countermeasure, DNS now withholds the email addresses of the licensees when doing a whois query. This is only to be seen as a short time solution. DNS is putting in place two new services :
+
+    * WHOIS
+
+      The conventional whois service, that shows information about the licensee, agent, nameservers, etc. (Even specifying the email addresses).
+      However, this new whois service has "quenching" facilities, meaning that it will automatically block flood queries coming from the same requestor. Also the maximum amount of queries per hour is limited.
+      Abuse will not be tolerated and the offending party will be blacklisted (as is already the case now).
+      Current Details : (subject to change depending on future experiences)
+          o One (1) query per second from the same requestor is permitted. When a query from the same requestor comes in during the grace period (initially the aforementioned 1 second), the grace period is doubled and no query results are returned. When the grace period is fully over, a new query can be succesfully concluded.
+          o All this is done to prevent abuse of the DNS .be database information, while at the same time keeping the necessary information available for people seeking to contact the holder of a .be domain (or in between party or agent contact) for problem solving etc.
+
+    * DAS : Domain availability service
+
+      As the new WHOIS service will limit the number of queries in a given time frame, websites or automated systems relying on this system, will encounter problems.
+      For this reason, DNS will put in place a new service (dubbed the domain availability service) that will have no such limitations (as to how many queries can be done in a given time frame), while severely reducing the output.
+      Essentially DAS will only give out the status of a domainname.
+
+      DAS has its very own protocol. For the moment, it accepts exactly one command : GET. The syntax is : get version domainname where get is the keyword get, version is the current version (for the moment 1.0) and domainname is the domainname being queried.
+      The command should be on one line, seperated by spaces.
+      The result will come back in strict format as well :
+
+       
+               % .be Domain Availability Server 1.0a
+               %
+               % (c) dns.be 2001 (http://www.dns.be)
+               %
+               % !!!!! Experimental Server
+               %% RC = 0
+               Domain: name
+               Status: xyz
+            
+
+      where xyz can be FREE, REGISTERED, BLOCKED, OUT OF SERVICE, WITHDRAWN or RESERVED (Of course, when the service is put in production use, the line containing the "experimental" message will vanish)
+      In case an error occurs, the result is :
+
+               % .be Domain Availability Server 1.0a
+               %
+               % (c) dns.be 2001 (http://www.dns.be)
+               %
+               % !!!!! Experimental Server
+               %% RC = rc
+               % message
+
+            
+
+      A list of error codes and corresponding messages follows:
+
+                RC       |    message
+                -9       |   IP address blocked
+                -8       |   Timeout
+                -7       |   Invalid pattern
+                -6       |   Invalid version
+            
+
+      Upon connecting to DAS, it will wait for a query command (without sending a header, prompt, ...).
+      Upon completion of the query, DAS will close the connection. 
+
+Available on whois.dns.be
+
+    * whois : port 43
+    * das : port 4343 
+
+As the system is still in development and testing phase, expect some downtime from time to time.
+
+Targetdate for going life (and phasing out the current whois service) is 02/04/2001 but will be confirmed on the DNS website in advance.
+Table footer
+

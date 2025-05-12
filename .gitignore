@@ -1,0 +1,13 @@
+RCS/
+TAR/
+bck/
+dev
+tmp
+*.key
+*.o
+*.old
+*.project
+.depend
+core
+eu
+rcsnote
