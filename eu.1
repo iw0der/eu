@@ -1,0 +1,60 @@
+.\"
+.\"  This manual page section is maintained by Arturo Bianchi,
+.\"  <the.craftsman@rinux.it>. Since this information is availabe
+.\"  by readind the documentation files, I don't intend to work
+.\"  on the man pages this time. 
+.\"
+.\"  Thanks for his work on this documentaion file !
+.\"
+.Id $Id: eu.1,v 1.1 2006/04/08 10:57:04 IW0DER Exp $
+.TH EU 1 "Apr 2006" eu "eu Manual"
+.SH NAME
+eu \- EU DAS Client
+.SH SYNOPSIS
+.B eu
+.RI [OPTIONS]...
+.RI [DOMAIN]...
+.SH DESCRIPTION
+For registrars and others there is an alternative to WHOIS to see if a .eu domain name is available, registered or
+already applied for. The service is called DAS (Domain Availability Service) and does not have limitations as to how
+many queries can be done in a given time. However, you will only get the status of the domain name as a reply to your
+query, not the full address etc of an applicant or holder. This software is a DAS client.
+.SH STATUS
+Possible statuses are:
+
+\f4REGISTERED\f1: Meaning just that. The domain name is registered.
+
+\f4BLOCKED\f1: The domain name has been blocked.
+
+\f4RESERVED\f1: The domain name is on the list of reserved domain names.
+
+\f4FREE\f1: The domain name is available.
+
+\f4SUSPENDED\f1 (quarantine): The domain name is in quarantine after being canceled.
+
+\f4APPLICATION PENDING\f1: The domain name is applied for during Sunrise waiting to be validated, activated or released again.
+
+\f4ON HOLD\f1: An ADR is pending on an active domain name
+
+\f4NOT ALLOWED\f1: The input string is invalid, e.g. asking for xn--abc or sdf&sdf etc.
+
+\f4OUT OF SERVICE\f1: This is shown when a registrar quits (stops contract) and domain names in his portfolio are not transferred to another registrar.
+
+\f4REVOKED\f1: Shown if EURid decides to revoke a domain name due to a material breach of the contract was found.
+.SH OPTIONS
+  -c           Output in csv format
+  -d           Debug messages to stderr
+  -f FILE      Input domain from file ascii
+  -h           Print this help screen
+  -v           Print version number
+.SH WARNINGS
+Use it at your own risk. :-)
+.SH BUGS
+None, :-))
+.SH FILES
+None
+.SH SEE ALSO
+None
+.SH AUTHORS
+This software was originally written by Arturo Bianchi.
+.FI

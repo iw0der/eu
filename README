@@ -1,0 +1,45 @@
+EU - .eu DAS client
+
+
++--------------+
+| INTRODUCTION |
++--------------+
+
+For registrars and others there is an alternative to WHOIS to see if a .eu
+domain name is available, registered or already applied for. 
+
+The service is called DAS (Domain Availability Service) and does not have
+limitations as to how many queries can be done in a given time. 
+
+However, you will only get the status of the domain name as a reply to your
+query, not the full address etc of an applicant or holder.
+
+This software is an eu DAS client.
+
+
+
++---------+
+| WARNING |
++---------+
+
+Use it at your own risk. :-)
+See the file CHANGES for a list of changes between versions.
+
+
+
++---------+
+| SUPPORT |
++---------+
+
+Read INSTALL for details on how to compile and install the program
+and its man page.
+
+The latest version of this software can be found at:
+
+	https://github.com/iw0der/eu    
+
+The source code is available under the GPL 2.0 licence.
+
+
+
+# $Id: README,v 1.1 2006/04/08 10:57:04 IW0DER Exp $

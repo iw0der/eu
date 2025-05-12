@@ -1,0 +1,14 @@
++------------+
+| INSTALLING |
++------------+
+
+The quick version:
+
+	1. Read the README file in this top-level directory.
+
+	2. make
+
+	3. make install
+
+
+# $Id: INSTALL,v 1.1 2006/04/08 10:57:04 IW0DER Exp $

@@ -1,0 +1,12 @@
+Begin4
+Title:          PACKAGE
+Version:        VERSION
+Entered-date:   DATE
+Description:	Client for EU DAS (Like WHOIS)
+Keywords:	EU DAS WHOIS DOMAIN
+Author:		Arturo Bianchi <the.craftsman@rinux.it>
+Maintained-by:	Arturo Bianchi <the.craftsman@rinux.it>
+Primary-Site	https://github.com/iw0der/eu/releases/tag/VERSION (SIZEk)
+Original-site:  ftp://oss.rinux.it/pub/projects/PACKAGE/PACKAGE-VERSION.tgz (SIZEk)
+Copying-policy: GPL
+End

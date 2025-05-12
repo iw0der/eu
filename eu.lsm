@@ -1,0 +1,12 @@
+Begin4
+Title:          eu
+Version:        1.3
+Entered-date:   20250512
+Description:	Client for EU DAS (Like WHOIS)
+Keywords:	EU DAS WHOIS DOMAIN
+Author:		Arturo Bianchi <the.craftsman@rinux.it>
+Maintained-by:	Arturo Bianchi <the.craftsman@rinux.it>
+Primary-Site	https://github.com/iw0der/eu/releases/tag/1.3 (15k)
+Original-site:  ftp://oss.rinux.it/pub/projects/eu/eu-1.3.tgz (15k)
+Copying-policy: GPL
+End
