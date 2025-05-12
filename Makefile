@@ -18,7 +18,7 @@
 #
 AUTHOR		= IW0DER
 PACKAGE		= eu
-VERSION		= 1.3
+VERSION		= 1.3.1
 
 
 #
@@ -72,6 +72,12 @@ SED     = sed
 STRIP   = strip --strip-unneeded
 TAR     = tar
 
+
+#
+# Git 
+#
+GIT_DESCRIBE = $(shell git describe --tags --always --dirty)
+GIT_COMMIT_DATE = $(shell git log -1 --format="%ad" --date=short)
 
 
 #
@@ -235,19 +241,21 @@ whenmake: whenmakeclean whenmake.c
 
 whenmake.c: Makefile
 	echo Create $@
-	echo "char package[]  = \"$(PACKAGE)\";" > $@
-	echo "char version[]  = \"$(VERSION)\";" >> $@
-	echo "char software[] = \"$(PACKAGE) $(VERSION) by $(AUTHOR)\";" >> $@
-	echo "char compiled[] = \"`$(DATE)`\";" >> $@
-	echo "char etc_path[] = \"$(ETC_DIR)\";" >> $@
-	echo "char var_path[] = \"$(VAR_DIR)\";" >> $@
+	echo "char package[]     = \"$(PACKAGE)\";" > $@
+	echo "char version[]     = \"$(VERSION)\";" >> $@
+	echo "char git_version[] = \"$(GIT_DESCRIBE)\";" >> $@
+	echo "char software[]    = \"$(PACKAGE) $(VERSION) by $(AUTHOR)\";" >> $@
+	echo "char compiled[]    = \"`$(DATE)`\";" >> $@
+	echo "char etc_path[]    = \"$(ETC_DIR)\";" >> $@
+	echo "char var_path[]    = \"$(VAR_DIR)\";" >> $@
 
 
 # Generate the file "last_change" which contains the date of change
 # of the most recently modified source code file
 #
 last_change: $(CFILES) $(HFILES)
-	grep '$$Id' $(CFILES) $(HFILES) | sort +4 | tail -1 | awk -F\$$ '{print $$2}' | awk '{print $$4,$$5}' > last_change
+	echo "$(GIT_COMMIT_DATE)" > last_change
+	grep '$$Id' $(CFILES) $(HFILES) | sort +4 | tail -1 | awk -F\$$ '{print $$2}' | awk '{print $$4,$$5}' >> last_change
 
 
 #

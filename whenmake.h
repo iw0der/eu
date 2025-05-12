@@ -15,6 +15,7 @@
 
 extern char package[];
 extern char version[];
+extern char git_version[];
 extern char software[];
 extern char compiled[];
 extern char etc_path[];
